@@ -24,17 +24,25 @@ class ProductItem extends StatelessWidget {
         ),
         footer: GridTileBar(
           backgroundColor: Colors.black87,
-          leading: Icon(
-            Icons.favorite,
+          leading: IconButton(
+            icon: Icon(
+              product.isFavorite ? Icons.favorite : Icons.favorite_border,
+            ),
             color: Theme.of(context).accentColor,
+            onPressed: () {
+              product.toggleFavoriteStatus();
+            },
           ),
           title: Text(
             product.title,
             textAlign: TextAlign.center,
           ),
-          trailing: Icon(
-            Icons.shopping_cart,
+          trailing: IconButton(
+            icon: Icon(
+              Icons.shopping_cart,
+            ),
             color: Theme.of(context).accentColor,
+            onPressed: () {},
           ),
         ),
       ),

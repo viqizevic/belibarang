@@ -1,19 +1,26 @@
+import 'package:belibarang/models/product.dart';
+import 'package:belibarang/screens/product_detail_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ProductItem extends StatelessWidget {
-  final String title;
-  final String imageUrl;
-
-  ProductItem(this.title, this.imageUrl);
-
   @override
   Widget build(BuildContext context) {
+    final product = Provider.of<Product>(context);
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: GridTile(
-        child: Image.network(
-          imageUrl,
-          fit: BoxFit.cover,
+        child: GestureDetector(
+          onTap: () {
+            Navigator.of(context).pushNamed(
+              ProductDetailScreen.id,
+              arguments: product.id,
+            );
+          },
+          child: Image.network(
+            product.imageUrl,
+            fit: BoxFit.cover,
+          ),
         ),
         footer: GridTileBar(
           backgroundColor: Colors.black87,
@@ -22,7 +29,7 @@ class ProductItem extends StatelessWidget {
             color: Theme.of(context).accentColor,
           ),
           title: Text(
-            title,
+            product.title,
             textAlign: TextAlign.center,
           ),
           trailing: Icon(

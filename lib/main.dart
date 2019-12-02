@@ -1,5 +1,6 @@
 import 'package:belibarang/models/cart.dart';
 import 'package:belibarang/models/products.dart';
+import 'package:belibarang/screens/cart_screen.dart';
 import 'package:belibarang/screens/product_detail_screen.dart';
 import 'package:belibarang/screens/products_overview_screen.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         home: ProductsOverviewScreen(),
         routes: {
           ProductDetailScreen.id: (context) => ProductDetailScreen(),
+          CartScreen.id: (context) => CartScreen(),
         },
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:belibarang/models/cart.dart';
+import 'package:belibarang/screens/cart_screen.dart';
 import 'package:belibarang/widgets/badge.dart';
 import 'package:belibarang/widgets/products_grid.dart';
 import 'package:flutter/material.dart';
@@ -54,7 +55,9 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
               icon: Icon(
                 Icons.shopping_cart,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(CartScreen.id);
+              },
             ),
           ),
         ],

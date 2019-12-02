@@ -1,4 +1,5 @@
 import 'package:belibarang/models/product.dart';
+import 'package:belibarang/models/cart.dart';
 import 'package:belibarang/screens/product_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -7,6 +8,7 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final product = Provider.of<Product>(context, listen: false);
+    final cart = Provider.of<Cart>(context, listen: false);
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: GridTile(
@@ -44,7 +46,9 @@ class ProductItem extends StatelessWidget {
               Icons.shopping_cart,
             ),
             color: Theme.of(context).accentColor,
-            onPressed: () {},
+            onPressed: () {
+              cart.addItem(product.id, product.price, product.title);
+            },
           ),
         ),
       ),

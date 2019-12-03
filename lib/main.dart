@@ -1,6 +1,8 @@
 import 'package:belibarang/models/cart.dart';
+import 'package:belibarang/models/orders.dart';
 import 'package:belibarang/models/products.dart';
 import 'package:belibarang/screens/cart_screen.dart';
+import 'package:belibarang/screens/orders_screen.dart';
 import 'package:belibarang/screens/product_detail_screen.dart';
 import 'package:belibarang/screens/products_overview_screen.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +21,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(
           value: Cart(),
         ),
+        ChangeNotifierProvider.value(
+          value: Orders(),
+        ),
       ],
       child: MaterialApp(
         title: 'MyShop',
@@ -31,6 +36,7 @@ class MyApp extends StatelessWidget {
         routes: {
           ProductDetailScreen.id: (context) => ProductDetailScreen(),
           CartScreen.id: (context) => CartScreen(),
+          OrdersScreen.id: (context) => OrdersScreen(),
         },
       ),
     );

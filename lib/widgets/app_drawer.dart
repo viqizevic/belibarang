@@ -1,3 +1,4 @@
+import 'package:belibarang/screens/user_products_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:belibarang/screens/orders_screen.dart';
@@ -26,6 +27,14 @@ class AppDrawer extends StatelessWidget {
             title: Text('Orders'),
             onTap: () {
               Navigator.of(context).pushReplacementNamed(OrdersScreen.id);
+            },
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.edit),
+            title: Text('Manage Products'),
+            onTap: () {
+              Navigator.of(context).pushReplacementNamed(UserProductsScreen.id);
             },
           ),
         ],

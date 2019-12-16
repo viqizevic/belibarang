@@ -5,6 +5,7 @@ import 'package:belibarang/screens/cart_screen.dart';
 import 'package:belibarang/screens/orders_screen.dart';
 import 'package:belibarang/screens/product_detail_screen.dart';
 import 'package:belibarang/screens/products_overview_screen.dart';
+import 'package:belibarang/screens/user_products_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
           ProductDetailScreen.id: (context) => ProductDetailScreen(),
           CartScreen.id: (context) => CartScreen(),
           OrdersScreen.id: (context) => OrdersScreen(),
+          UserProductsScreen.id: (context) => UserProductsScreen(),
         },
       ),
     );
